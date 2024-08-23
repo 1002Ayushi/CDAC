@@ -1,0 +1,106 @@
+class DayTwo{
+  public static void main(String args[])
+  {
+   byte b = 127; //output--> 127 --> implicit
+   byte v = (byte)130;//explicit
+System.out.println(b);
+
+//typecasting
+ byte c = (byte)128;
+System.out.println(c);
+
+
+int a = 10;
+ byte b2 = a;
+//System.out.println(b2); // error
+
+*/
+1 bit
+1 byte - 8 bit
+1 kb - 1024 byte
+1 mb - 1024 kb
+1 gb - 1024 mb */
+
+char c = 'A';
+System.out.println(c); --> A
+System.out.println((int)c); --> 65
+System.out.println((char)66); --> B
+ 125--> {
+//ASCII 
+ }
+}
+---------------------->
+
+class Demo1{
+public static void main(String args[]){
+int a =10;
+float f =a;
+System.out.println(f); //10.0
+
+float f1 = 10.0; --> error (default double)
+float f2 = 10.0f; --> no error
+
+int a = (int)f1;
+System.out.println(a);//10
+
+}
+}
+
+--------------------------------------------------------------------------------
+class Demo2{
+public static void main(String []args){
+int age = 18;
+if(age > 18){
+System.out.println("eligible for voting);
+}
+else{
+System.out.println("not eligible for voting");
+}
+
+/* ERROR           /*correct code
+if(1){             if(true){
+   statement            statement
+}                         }
+else{               else { 
+statement              statement
+}*/                    }   
+
+
+int age =18;
+ if(age > 18 && age == 18){
+System.out.println("eligible");  // eligible
+}
+else{
+System.out.println(" not eligible");
+}
+}
+}
+-------------------------------------------------------------------------
+SWITCH: one time excuation
+class SwitchDemo{
+public static void main(String []args){
+ 
+int day = 1;
+
+switch(day){
+case 1: 
+      System.out.println("today is monday");
+       break;
+case '1':
+      System.out.println("char 1");  //no error
+       break;
+case 1.0 :
+      System.out.println("double 1.0"); //error
+       break;
+case 2: 
+      System.out.println("today is tuesday");
+       break;
+case 3: 
+      System.out.println("today is wednesday");
+       break;
+default: 
+      System.out.println("invalid input");
+       break;
+}
+}
+}

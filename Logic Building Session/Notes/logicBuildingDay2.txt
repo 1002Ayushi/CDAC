@@ -1,0 +1,136 @@
+LOGIC BUILDING DAY 2--->
+-------------------------
+JAVA: java is simple and secure language beacuse there is no pointer concept
+Author - James goslline
+open source language
+1995
+
+initial version - 1
+
+lastest version - 24(latest version nhi karna chahiyte installl b/c stability nhi rehti)
+
+initial name of java is : OAK
+
+extensions --> (.java , .class---> core java),(.jar,.war---> advance java)
+
+SunMicro Systems takens by Oracle
+---------------------------------
+WORA - write once run anywhere
+---------------------------------
+
+Parts of Java
+1.Core Java
+2. Advance Java
+    1.J2SE (java 2 std edition)
+    2.j2ee  (java 2 enterprise edition)
+    j2me (java 2 micro edition)
+    jdbc
+    jsp
+    servlet
+
+FRAMEWORK--->
+spring
+spring boot
+hibernate
+--------------------------------------------------------------
+JAVA FEATURES --->
+
+1. Simple 
+     -pointer not there
+     -multiple inheritance
+2. Platform independent
+     - .class file genrated automatically at compilation time 
+     - javac Demo.java .... windows
+       .class we can run on any other OS.... 
+****jdk is platform dependent 
+3. Compiler and interpreted(line by line compile)
+4. Object oriented programing--> class demo{
+                                    }
+                                  demo obj = new demo();
+5. Secure(public , private, protected-->core java)(security in spring boot --adv java)
+6. Dynamic language
+7. high performance
+8. robust-->memory management easy,exception handling 
+9. multithreding
+10. portable and distributed
+11. architecutal
+---------------------------------------
+CLASS
+     1.instance variable
+     2.static varible
+     3.constractor
+     4.method
+     5.instance block and static block
+-----------------------------------------
+VARIABLE 
+      1.local
+      2.global
+primitive
+non-primitive
+
+DATATYPES-
+     1.byte --> 1 byte --> -128 to 127
+     2.short --> 2 byte --> 
+     3.int --> 4 byte -->
+     4.long --> 8 byte -->
+     5.float --> 4 byte -->
+     6.double --> 8 byte -->
+     7.char --> 2 byte -->
+     8.boolean --> 1 bit (true/false in java)(0/1 in c, c++ --> in java integer type)
+9.String (string S, class name first char should be capital --> non primitve)
+
+
+dataType Name;   //declare
+dataTye Name1 = 10; // decalre and initilise   
+
+
+binary - 0's and 1's
+10(deccimal) = 1010(binary)
+--------------------------------------
+TOKENS:
+smallest indiviual part a program
+
+identifiers:
+name given to class,method,variablee....
+***52 keywords in java***
+RULES:
+1.should start with char , _ ,$, @
+2. numbers are not allowed at the start of varible name
+3.duplicates are not allowed
+4. variable name start with small later and class should start with capital later
+5.String is a class name that is allowed as variable name or method name
+
+CONST:
+MAX_VALUE,MAX_PRIORITY,MIN_PRIORITY(all sould be capital later)
+
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+
+JAVA STATEMENTS:
+1.if
+2.if-else
+3.switch
+4.loops: for,while,do-while
+
+1.if syntax
+-------
+if(condition){
+statement
+}
+
+2.if-else syntax 
+else without if error
+-------
+if(condition){
+statement
+}
+else{
+statement
+}
+
+3.switch syntax
+switch(case){
+case  :
+    statement;
+    break;
+}
