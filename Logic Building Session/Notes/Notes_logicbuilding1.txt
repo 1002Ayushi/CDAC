@@ -1,0 +1,91 @@
+day 1 (cdac logic building)
+--------------------------
+
+Problem Solving
+---------------
+1. what is given in statements
+2. requirement
+3. solution
+
+---------------------
+Algorithm
+----------
+set of instructions.....finite.....
+
+addition 2 number 
+
+1. take two number
+2. add those two num
+3. display the addition
+---------------------------
+first algorithm
+1.start
+2.take 2 numbers
+3.add those 2 numbers
+4.display addition
+5.end
+------2nd VARIATIONS/Algorithm
+1.start
+2.declare number1, number2,result
+3.add number1 and number2 
+4.store in result
+5.display result
+6.end
+
+------3rd VARIATIONS/Algorithm
+1.start
+2.declare number1, number2,result
+3.input number 1, number2
+4.add number1 and number2 
+5.store in result
+6.display result
+7.end
+
+**FLOWCHART**
+pictorial representation
+-------------------------
+
+find largest of two number
+1.start
+2.declare 2 number
+3.input
+4.compare 2 number
+5. dispaly largest
+6.end
+
+print numbers divisible by two from 0 to 20
+---------------------------------------------
+
+int n = 1;
+if(n/2)
+print n
+
+
+
+DAY 2 LOCGIC BUILDING
+----------------------
+----------------------
+resources------>
+*****stack overflow for error solving****
+javat point, gfg , medium.com , baelung.com , original documentation
+
+notepad++
+
+swot analysis-->
+-------------------
+strength
+weekness
+doc file or pdf file
+threads
+to reslove it action
+
+
+strength--> skills coding skills , programing ,java
+personal trets,team work, quick learner, certification
+
+weekness--> knowleage gap of rect , .net
+lazy, angry, short tarm, not work with team,fresher
+
+opportinities--->AI,ML,Linkedin id, cdac network
+
+threads---> slow down market,AI takes a job what i will learn AI,negative people,phone
