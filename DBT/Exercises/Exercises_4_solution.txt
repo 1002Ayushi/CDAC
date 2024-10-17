@@ -1,0 +1,108 @@
+
+1)  select
+    -> min(status)
+    -> from suppliers;
+
+------------------------------------------------------------------------------------
+
+2) select
+    -> max(weight)
+    -> from parts; 		
+	
+------------------------------------------------------------------------------------
+
+3) select
+   -> avg(weight)
+   -> from parts;
+
+------------------------------------------------------------------------------------
+
+4) select
+    -> sum(Qty)
+    -> from supplier_parts_project
+    -> where Pno = 'P1';
++----------+
+| sum(Qty) |
++----------+
+|      100 |
++----------+  
+
+-----------------------------------------------------------------------------------
+
+5) select pno,sum(qty)
+    -> from supplier_parts_project
+    -> group by pno;
+
+-----------------------------------------------------------------------------------
+
+6) select
+    -> pno , avg(qty)
+    -> from supplier_parts_project
+    -> group by pno;
+
+-----------------------------------------------------------------------------------
+
+7) select
+    -> pno , max(qty)
+    -> from supplier_parts_project
+    -> group by pno
+    -> having max(qty) > 800;	
+	
+-----------------------------------------------------------------------------------
+
+8) select
+    -> status , count(status)
+    -> from suppliers
+    -> group by status;
+	
+	select
+    -> status , count(*)
+    -> from suppliers
+    -> group by status;
++--------+---------------+
+| status | count(status) |
++--------+---------------+
+|     10 |             3 |
+|     20 |             2 |
+|     30 |             2 |
+|     25 |             1 |
+|     15 |             1 |
+|     35 |             1 |
+|     40 |             1 |
++--------+---------------+	
+
+-----------------------------------------------------------------------------------
+
+9) select
+    -> status , count(*)
+    -> from suppliers
+    -> group by status;
+	
+------------------------------------------------------------------------------------	
+	
+10)The difference between COUNT(Status) and COUNT(*) in SQL lies in how they count rows:
+
+COUNT(*)
+------------>
+Definition: Counts all rows in the result set, regardless of whether any column has a NULL value.
+Use Case: It’s often used when you want a total count of all records in a table or result set.
+COUNT(Status)
+------------>
+Definition: Counts only the non-NULL values in the specified column (Status in this case).
+Use Case: This is useful when you want to count the number of records that have a specific value in the Status column, excluding any rows where Status is NULL.	
+
+---------------------------------------------------------------------------------------
+
+11)SELECT
+    ->     CASE
+    ->         WHEN status = 10 THEN 'Ten'
+    ->         WHEN status = 20 THEN 'Twenty'
+    ->         WHEN status = 30 THEN 'Thirty'
+    ->         WHEN status = 40 THEN 'Fourty'
+    ->         WHEN status = 50 THEN 'Fifty'
+    ->         WHEN status = 60 THEN 'Sixty'
+    ->         ELSE 'Unknown'
+    ->     END AS Status,
+    ->     COUNT(*) AS Count
+    ->     FROM Suppliers
+    ->     GROUP BY status;

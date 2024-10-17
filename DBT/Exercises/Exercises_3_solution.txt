@@ -1,0 +1,67 @@
+
+1)  select 
+   concat(upper(left(sname,1)),lower(substring(sname,2))) as Initial_Capital
+   from suppliers;
+
+-------------------------------------------------------------------------------
+   
+2) select 
+   upper(sname)
+   from suppliers;  
+   
+-------------------------------------------------------------------------------   
+   
+3) select
+   -> lower(sname)
+   -> from suppliers;   
+   
+-------------------------------------------------------------------------------
+   
+4) select
+   -> lpad(sname,25,' ')
+   -> from suppliers; 
+   
+-------------------------------------------------------------------------------
+   
+5) select
+   -> replace(sname,'la','ro')
+   -> from suppliers;
+   
+-------------------------------------------------------------------------------
+
+6) select
+   -> replace(replace(sname,'l','r'), 'a','o')
+   -> from suppliers;   
+   
+-------------------------------------------------------------------------------
+   
+7) select sname , length(sname)
+   -> from suppliers;   
+   
+-------------------------------------------------------------------------------
+      
+8) select *
+   ->  from suppliers
+   -> where sname = soundex('BLOKE'); 
+
+-------------------------------------------------------------------------------
+
+9) select
+    -> sname,
+    -> CASE
+    -> when status = 10 then 'TEN'
+    -> when status = 20 then 'TWEENTY'
+    -> when status = 30 then 'THIRTY'
+    -> when status = 40 then 'FOURTY'
+    -> when status = 50 then 'FIFTY'
+    -> else 'MORE'
+    -> end
+    -> from suppliers;
+
+-------------------------------------------------------------------------------   
+   
+10) select 
+    dayname(sysdate()) ;  
+
+    select
+    -> dayname(curdate());	

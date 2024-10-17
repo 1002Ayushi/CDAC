@@ -1,0 +1,139 @@
+
+1)create table SEMP
+    -> (
+    -> EMPNO CHAR(4),
+    -> EMPNAME CHAR(20),
+    -> BASIC FLOAT,
+    -> DEPTNO CHAR(2),
+    -> DEPTHEAD CHAR(4)
+    -> );
+------------------------------------------------------------------
+2) create table SDEPT
+    -> (
+    -> DEPTNO CHAR(2),
+    -> DEPTNAME CHAR(15)
+    -> );
+------------------------------------------------------------------
+3)  insert into SDEPT values
+    -> ('10','Development'),
+    -> ('20','Training');	
+------------------------------------------------------------------
+4)  insert into semp (EMPNO,EMPNAME,BASIC,DEPTNO) values
+    ('0001','SUNIL','6000','10'),
+	('0002','HIREN','8000','20');
+	 insert into semp (EMPNO,EMPNAME,BASIC,DEPTNO) values
+    -> ('0002','HIREN','8000','20');
+	 insert into semp (EMPNO,EMPNAME,BASIC,DEPTHEAD) values
+    -> ('0004','GEORGE','6000','0002');
+-------------------------------------------------------------------	
+5)-- Create SUPPLIER table
+create table SUPPLIERS 
+(
+Sno varchar(10),
+Sname varchar(20),
+Status int ,
+City varchar(20)
+);   
+
+-- Create PARTS table
+create table PARTS
+    -> (
+    -> Pno varchar(10),
+    -> Pname varchar(30),
+    -> Color varchar(20),
+    -> Weight float(5,2),
+    -> City varchar(20)
+    -> );
+
+-- Create PROJECTS table
+ create table PROJECTS
+    -> (
+    -> Jno varchar(10),
+    -> Jname varchar(20),
+    -> City varchar(20)
+    -> );
+
+-- Create SUPPLIER-PARTS-PROJECT table
+ create  table SUPPLIER_PARTS_PROJECT
+    -> (
+    -> Sno varchar(10),
+    -> Pno varchar(10),
+    -> Jno varchar(10),
+    -> Qty int(5)
+    -> );
+
+INSERT INTO Suppliers VALUES
+('S1', 'Supplier A', 10, 'London'),
+('S2', 'Supplier B', 20, 'Paris'),
+('S3', 'Supplier C', 30, 'Athens'),
+('S4', 'Supplier D', 25, 'Berlin'),
+('S5', 'Supplier E', 15, 'London'),
+('S6', 'Supplier F', 10, 'Madrid'),
+('S7', 'Supplier G', 35, 'Rome'),
+('S8', 'Supplier H', 20, 'Berlin'),
+('S9', 'Supplier I', 30, 'Paris'),
+('S10', 'Supplier J', 40, 'London');
+
+INSERT INTO Parts VALUES
+('P1', 'Part A', 'Red', 12.00, 'London'),
+('P2', 'Part B', 'Blue', 15.50, 'Paris'),
+('P3', 'Part C', 'Green', 14.00, 'London'),
+('P4', 'Part D', 'Yellow', 13.50, 'Athens'),
+('P5', 'Part E', 'Black', 11.25, 'Berlin'),
+('P6', 'Part F', 'White', 16.00, 'Madrid'),
+('P7', 'Part G', 'Orange', 12.50, 'Rome'),
+('P8', 'Part H', 'Purple', 14.75, 'Berlin'),
+('P9', 'Part I', 'Pink', 13.00, 'Paris'),
+('P10', 'Part J', 'Grey', 12.80, 'London');
+
+INSERT INTO Projects VALUES
+('J1', 'Project A', 'Athens'),
+('J2', 'Project B', 'London'),
+('J3', 'Project C', 'Paris'),
+('J4', 'Project D', 'Athens'),
+('J5', 'Project E', 'Berlin'),
+('J6', 'Project F', 'Madrid'),
+('J7', 'Project G', 'Rome'),
+('J8', 'Project H', 'Paris'),
+('J9', 'Project I', 'London'),
+('J10', 'Project J', 'Berlin');
+
+INSERT INTO SUPPLIER_PARTS_PROJECT VALUES
+('S1', 'P1', 'J1', 100),
+('S2', 'P2', 'J2', 200),
+('S3', 'P3', 'J3', 150),
+('S4', 'P4', 'J4', 300),
+('S5', 'P5', 'J5', 120),
+('S6', 'P6', 'J6', 180),
+('S7', 'P7', 'J7', 90),
+('S8', 'P8', 'J8', 250),
+('S9', 'P9', 'J9', 130),
+('S10', 'P10', 'J10', 110);
+------------------------------------------------------
+5) select * from Suppliers;
+
+6) select Sno , Sname from suppliers;
+
+7) select Pname , color from Parts
+    -> where city = 'London';
+
+8) select * from suppliers where city = 'London';
+
+9) select * from suppliers where city = 'Paris' OR city = 'Athens';
+
+10) select * from projects where city = 'Athens';
+
+11) select Pname from parts where weight >= 12 AND weight <=14;
+--> select Pname from parts where weight between 12 AND 14;
+
+12) select * from suppliers where status >= 20;
+
+13) select * from suppliers where city != 'London';
+
+14) select city from suppliers ;
+
+15) select 
+weight AS GRAM,
+ weight * 1000 AS MILLIGRAMS,
+ weight /1000 AS KG 
+from parts;
