@@ -1,0 +1,31 @@
+
+1)  select
+    -> onum,snum,amt * 0.12 AS commission
+    -> from
+    -> orders;
+	
+--------------------------------------------------------------------------------------------
+
+2) select
+    -> city,max(rating)
+    -> from customers
+    -> group by city;
+
+--------------------------------------------------------------------------------------------
+
+3)  select
+    -> rating , cname , cnum
+    -> from customers
+    -> order by
+    -> rating desc;	
+	
+-------------------------------------------------------------------------------------------
+
+4)select
+    -> odate , sum(amt) as total_orders
+    -> from orders
+    -> group by odate
+    -> order by total_orders desc;
+
+--------------------------------------------------------------------------------------------	
+
