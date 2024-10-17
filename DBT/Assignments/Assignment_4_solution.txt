@@ -1,0 +1,23 @@
+
+1) select
+    -> Onum,Amt,Odate
+    -> from orders;
+
+-----------------------------------------------------------------
+
+2) select * from customers
+    -> where Snum = '1001';
+
+-----------------------------------------------------------------
+
+3) select city,sname,snum,comm from salespeople;
+
+-----------------------------------------------------------------
+
+4) select Cname,rating from customers where city = 'San Jose';
+
+-----------------------------------------------------------------
+
+5)  select DISTINCT  snum 
+    -> from orders;
+	

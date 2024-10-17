@@ -1,0 +1,47 @@
+
+1) (a) select *
+    -> from orders
+    -> where Odate = '1990-10-03' OR Odate = '1990-10-04';
+	
+   (b) select *
+    -> from orders
+    -> where Odate IN ('1990-10-03' , '1990-10-04');
+
+--------------------------------------------------------------------
+2)  select c.* ,Sname from customers c
+    -> join salespeople s ON c.snum = s.snum
+    -> where s.Sname IN('Peel','Motika');
++------+---------+--------+--------+------+--------+
+| Cnum | Cname   | City   | Rating | Snum | Sname  |
++------+---------+--------+--------+------+--------+
+| 2001 | Hoffman | London |    100 | 1001 | Peel   |
+| 2006 | Clemens | London |    100 | 1001 | Peel   |
+| 2007 | Pereira | Rome   |    100 | 1004 | Motika |
++------+---------+--------+--------+------+--------+
+
+---------------------------------------------------------------------
+3)  select *
+    -> from customers
+    -> where Cname >'A' AND Cname <'H';
+------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>
+    
+ select * from customers where cname between 'A' and 'H';
+
+------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>
+
+ SELECT *
+    -> FROM customers
+    -> WHERE SUBSTRING(cname, 1, 1) BETWEEN 'A' AND 'G';	
+	
+---------------------------------------------------------------------
+4)   select *
+    -> from customers
+    -> where cname like 'C%';	
+	
+---------------------------------------------------------------------
+5)  select *
+    ->  from orders
+    -> where NOT (amt IS NULL OR Amt = 0 );	
+	
+	
+	

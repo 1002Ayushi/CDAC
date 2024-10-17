@@ -1,0 +1,27 @@
+ 
+
+Assignment –2
+---------------------
+Introducing Relational Databases.
+
+
+
+1) Which field of the Customers table is the primary key?
+--> "Cnum" field of the Customers table is the primary key.
+
+
+2) What is the 4th column of the Customers table?
+--> 4th column of the Customers table is "Rating".
+
+3) What is another word for row? For column?
+--> ROW : Tuple,Entity
+--> COLUMN : Attribute,Key
+
+4) Why isn’t it possible to see the first five rows of a table?
+If you're unable to see the first five rows of a table in a database, there could be several reasons:
+
+No Data in the Table: The table might be empty, meaning there are no rows to display.
+
+Permission Issues: You may not have the necessary permissions to view the data in the table.
+
+Incorrect Query: The SQL query you are using might not be properly structured to retrieve the first five rows.
