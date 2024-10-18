@@ -1,0 +1,32 @@
+
+1)  select
+    -> orders.onum, customers.cname
+    -> from customers
+    -> join orders on customers.cnum = orders.cnum;
+	
+---------------------------------------------------------------------------
+	
+2) select onum,sname,cname
+    -> from orders join customers on customers.cnum = orders.cnum
+    -> join salespeople on salespeople.snum =orders.snum
+    -> ;
+	
+--------------------------------------------------------------------------
+
+3) select
+    -> customers.cname , salespeople.sname , salespeople.comm
+    -> from customers
+    -> join orders on customers.cnum = orders.cnum
+    -> join salespeople on salespeople.snum = orders.snum
+    -> where salespeople.comm > 0.12;	
+	
+-------------------------------------------------------------------------
+
+4) select orders.onum,salespeople.sname,
+    -> (orders.amt * salespeople.comm) as commision_amount
+    -> from orders
+    -> join customers on customers.cnum = orders.cnum
+    -> join salespeople on salespeople.snum
+    -> where customers.rating>100;
+	
+	
