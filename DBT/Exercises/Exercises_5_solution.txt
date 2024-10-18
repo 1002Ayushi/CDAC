@@ -1,0 +1,96 @@
+
+1) // select
+   // ->     suppliers.Sname,sum(supplier_parts_project.qty) Quantity
+   // ->     from suppliers,supplier_parts_project
+   // ->     group by suppliers.Sname;
+   
+    select
+    -> suppliers.sname , sum(supplier_parts_project.qty)
+    -> from suppliers
+    -> join supplier_parts_project ON suppliers.sno = supplier_parts_project.sno
+    -> group by sname;
+
+-----------------------------------------------------------------------------------
+
+2)  select
+    -> parts.pname , sum(supplier_parts_project.qty)
+    -> from parts
+    -> join supplier_parts_project ON parts.pno = supplier_parts_project.pno
+    -> group by parts.pname;
+	
+-----------------------------------------------------------------------------------	
+
+3)  select
+    -> Projects.jname , sum(supplier_parts_project.qty)
+    -> from projects
+    -> join supplier_parts_project on projects.jno = supplier_parts_project.jno
+    -> group by projects.jname;
+	
+-----------------------------------------------------------------------------------		
+
+4) select
+     s.sname,
+     p.pname,
+     j.jname,
+     spj.qty
+     from
+     s
+     join spj ON s.sno = spj.sno
+     join p on p.pno = spj.pno
+     join j on j.jno = spj.jno;	
+	 
+-----------------------------------------------------------------------------------	
+	 
+5)  select
+    -> p.pname,
+    -> spj.qty
+    -> from p
+    -> join spj on p.pno = spj.pno
+    -> where p.color = 'Red';
+
+-----------------------------------------------------------------------------------	
+
+6)  select
+    -> s.sname,
+    -> spj.qty
+    -> from s
+    -> join spj
+    -> on s.sno = spj.sno
+    -> where s.status = 20;
+
+-----------------------------------------------------------------------------------	
+	
+
+7) select
+    -> p.pname,
+    -> spj.qty
+    -> from p
+    -> join spj
+    -> on p.pno = spj.pno
+    -> where p.weight > 14;	
+
+------------------------------------------------------------------------------------
+
+8)  select
+    -> p.pname , spj.qty
+    -> from p
+    -> join spj on p.pno = spj.pno
+    -> where p.weight > 14;
+	
+-------------------------------------------------------------------------------------	
+	
+9)  select
+    -> j.jname,j.city
+    -> from j
+    -> join spj on spj.jno = j.jno
+    -> join p on p.pno =spj.pno
+    -> group by j.jname,j.city
+    -> having sum(spj.qty) > 500;
+
+--------------------------------------------------------------------------------------	
+
+10)  select
+    -> p.pname,spj.qty
+    -> from p
+    -> join spj on p.pno = spj.pno
+    -> where p.weight < 15;
