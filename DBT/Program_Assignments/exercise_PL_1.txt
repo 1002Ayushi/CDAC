@@ -1,0 +1,114 @@
+1) create table area
+    -> (
+    -> area float,
+    -> perimiter float
+    -> );
+>>>>>>>>>
+delimiter //
+create procedure rectangle(l float, w float)
+begin
+declare Area float;
+declare Perimiter float;
+set Area = l*w;
+set Perimiter = 2*(l+w);
+insert into area values(Area,Perimiter);
+end;//
+delimiter ;
+>>>>>>>>>>>>>>
+call rectangle(2,5);
+
+--------------------------------------------------------------------------------
+
+2) create table temp
+(
+var int,
+square int,
+cude int
+);
+
+>>>>>>>>>
+delimiter //
+create procedure calculate_num()
+begin
+declare num int;
+declare sqrt int;
+declare Cude int;
+set num = 5;
+set sqrt = num*num;
+set Cude = num*num*num;
+insert into temp values(num,sqrt,Cude);
+end;//
+delimiter ;
+
+>>>>>>>>>>>>>>
+call calculate_num();
+
+------------------------------------------------------------------------------
+3) create table temp_converter
+(
+f float,
+c float
+);
+>>>>>>>>>>>>>>>>>>>>>
+delimiter //
+create procedure temperature(temp_value float, conv_type varchar(10))
+begin
+declare temp float;
+
+if conv_type = 'FtoC' then
+set temp = (temp_value - 32) * 5/9;
+insert into temp_converter(f) values(temp); 
+elseif conv_type = 'CtoF' then
+ set temp = (9/5) * temp_value + 32;
+ insert into temp_converter(c) values(temp);
+ end if;
+ end;//
+ delimiter ;
+ 
+------------------------------------------------------------------------------------
+
+4) delimiter //
+create procedure ConvertInches(num int)
+begin
+declare inches int;
+declare yards int;
+declare feet int;
+set inches = num % 12;
+set feet = (num % 36) DIV 12;
+set yards = num % 12;
+
+insert into temp values(inches,feet,yards);
+end;//
+delimiter ;
+>>>>>>>>>>>>>>>>>>>>>>>>>>
+call ConvertInches(124);
+
+------------------------------------------------------------------------------------
+
+5)delimiter //
+create procedure checkDivisibility(input int)
+begin
+if input % 5 = 0 then
+select concat(input,' is evenly divisible by 5') as Result;
+else
+select concat(input,' is not evenly divisible by 5') as Result;
+end if; 
+end;//
+delimiter ;
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+call checkDivisibility(25);
+
+----------------------------------------------------------------------------------
+
+6)delimiter //
+create procedure addcheck(x int, y int)
+begin
+declare addition int;
+set addition = x + y;
+if addition >= 100 then
+select concat(addition,' grater then 100') as sum;
+else 
+select concat(addition,' less then 100') as sum;
+end if;
+end; //
+delimiter ;

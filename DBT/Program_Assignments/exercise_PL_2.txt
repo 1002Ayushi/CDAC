@@ -1,0 +1,166 @@
+1)delimiter//
+create procedure ay()
+begin
+declare n int;
+select sal into n from emp where ename = 'KING';
+if n between 1 and 500 then
+select concat(n,' in range of 1 to 500');
+ else
+ select concat(n,' in above range of 500');
+ end if;
+ end;//
+ delimiter ;
+>>>>>>>>>>>>>>>>>>>>>>
+call ay();
+
+----------------------------------------------------------
+1)CREATE TABLE numbers (
+    value INT
+);
+
+INSERT INTO numbers (value) VALUES (5), (15), (8);
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+DELIMITER //
+
+CREATE PROCEDURE check_number_range()
+BEGIN
+    DECLARE num INT;
+
+    -- Select the first number from the table
+    SELECT value INTO num FROM numbers LIMIT 1;
+
+    -- Check if the number is within the range
+    IF num BETWEEN 1 AND 10 THEN
+        SELECT CONCAT(num, ' is within the range of 1 to 10') AS result;
+    ELSE
+        SELECT CONCAT(num, ' is outside the range of 1 to 10') AS result;
+    END IF;
+END //
+
+DELIMITER ;
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CALL check_number_range();
+
+------------------------------------------------------------------------
+
+2)create table sides
+ ( 
+ a int,
+ b int,
+ c int
+ );
+ 
+ insert into sides values (2,4,6);//not
+  insert into sides values (8,4,6);//yes
+  
+>>>>>>>>>>>>>>>>>>>>>
+delimiter //
+create procedure triangle()
+begin
+declare side1 int;
+declare side2 int;
+declare side3 int;
+select a,b,c into side1,side2,side3 from sides limit 1 offset 1; //limit 1
+if side1+side2 > side3 and side1+side3 > side2 and side2+side3 > side1 then
+select concat('triangle it is');
+else
+select concat('not triangle');
+end if;
+end;//
+delimiter ;
+ 
+---------------------------------------------------------------------------- 
+
+3)CREATE TABLE years (
+    year INT
+);
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INSERT INTO years (year) VALUES 
+(2000),   -- Leap year
+(1900),   -- Not a leap year
+(2024),   -- Leap year
+(2023);   -- Not a leap year
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+DELIMITER //
+
+CREATE PROCEDURE check_leap_year()
+BEGIN
+    DECLARE selected_year INT;
+
+    -- Select the first year from the table
+    SELECT year INTO selected_year FROM years LIMIT 1;
+
+    -- Check if the selected year is a leap year
+    IF (selected_year % 4 = 0 AND selected_year % 100 != 0) OR (selected_year % 400 = 0) THEN
+        SELECT CONCAT(selected_year, ' is a leap year.') AS result;
+    ELSE
+        SELECT CONCAT(selected_year, ' is not a leap year.') AS result;
+    END IF;
+END //
+
+DELIMITER ;
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CALL check_leap_year();
+
+>>>>>>>>>>>>>>>>>>>>>>>...........................
+ create table temp
+    -> (
+    -> Year int,
+    -> Leap_Year varchar(25)
+    -> );
+>>>>>>>>>>>>>>>>>>>>>>>>...........
+DELIMITER //
+
+CREATE PROCEDURE check_leap_year()
+BEGIN
+    DECLARE selected_year INT;
+
+    -- Select the first year from the table
+    SELECT year INTO selected_year FROM years LIMIT 1;
+
+    -- Check if the selected year is a leap year
+    IF (selected_year % 4 = 0 AND selected_year % 100 != 0) OR (selected_year % 400 = 0) THEN
+       insert into temp values(selected_year, ' is a leap year.');
+    ELSE
+        insert into temp values(selected_year, ' is not a leap year.') ;
+    END IF;
+END //
+
+DELIMITER ;
+
+------------------------------------------------------------------------------------
+4) CREATE TABLE string_pairs (
+    string1 VARCHAR(255),
+    string2 VARCHAR(255)
+);
+
+INSERT INTO string_pairs (string1, string2) VALUES 
+('Hello, world!', 'world'),    -- string2 exists in string1
+('Goodbye', 'bye'),             -- string2 exists in string1
+('MySQL', 'SQL'),               -- string2 exists in string1
+('OpenAI', 'AI');               -- string2 exists in string1
+
+>>>>>>>>>>>............................................
+
+DELIMITER //
+
+CREATE PROCEDURE check_string_existence()
+BEGIN
+    DECLARE str1 VARCHAR(255);
+    DECLARE str2 VARCHAR(255);
+
+    -- Select the first pair of strings from the table
+    SELECT string1, string2 INTO str1, str2 FROM string_pairs LIMIT 1;
+
+    -- Check if str2 exists in str1
+    IF LOCATE(str2, str1) > 0 THEN
+        SELECT CONCAT('"', str2, '" exists inside "', str1, '"') AS result;
+    ELSE
+        SELECT CONCAT('"', str2, '" does not exist inside "', str1, '"') AS result;
+    END IF;
+END //
+
+DELIMITER ;
+>>>>>>>>>>>>>>>>>>>>>>>>>.......
+CALL check_string_existence();
+
