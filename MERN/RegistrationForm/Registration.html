@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    #bodyy{
+        position: absolute;
+       padding-right: 80%;
+       padding-bottom:140% ;
+       
+    }
+    
+       form{
+        align-content: center;
+        margin: 15px;
+        margin-top: 30px;
+        padding-bottom: 300px;
+        padding-right: 150px;
+        background-color: rgb(137, 84, 137);
+        color: white;
+        border: rgb(25, 11, 11);
+       }
+     form label{
+        margin: 20px 30px 10px 25px;
+      
+     }
+     table{
+        margin-left: 165px;
+        margin-top: -20px;
+        border-color: white;
+        /* border-style: solid; */
+     }
+     table th {
+        padding-right: 10px;
+        border-radius: 7px;
+        border-color: white;
+        /* border-style: solid; */
+     }
+     #i{
+       background-color: aliceblue;
+     }
+     
+    input {
+        margin-bottom: 18px;
+        margin-top: 5px;
+    }
+    #btn{
+
+        color: aliceblue;
+        background-color: grey;
+        padding: 20px 30px;
+        margin-left: 50%;
+        
+    }
+    
+    </style>
+    
+    </head>
+    <body id="bodyy">
+       <form >
+        <label>FIRST NAME</label><input type="text"><br>
+        <label>LAST NAME</label><input  type="text"><br>
+        <label>DATE OF BIRTH</label><input type="date"><br>
+        <label>EMAIL ID</label><input type="text"><br>
+        <label>GENDER</label><input type="radio" value="Male">
+        <label for="Male">Male</label>
+        <input type="radio" value="Female">
+        <label for="Female">Female</label><br>
+        <label>ADDRESS</label><textarea></textarea><br>
+        <label>CITY</label><input type="text"><br>
+        <label>PIN CODE</label><input type="text"><br>
+        <label>STATE</label><input type="text"><br>
+        <label>COUNTRY</label><input type="text"><br>
+        <label>HOBBIES</label><label>Drawing</label><input type="checkbox">
+        <label>Singing</label><input type="checkbox"><label>Dancing</label><input type="checkbox"><br>
+        <label>Others</label><input type="checkbox"><input type="text"><br><br>
+        <label>QUALIFICATION</label>
+        <table>
+        <tr >
+            <th>SL.NO</th>
+            <th>Examination</th>
+            <th>Board</th>
+            <th>Percentage</th>
+            <th>Year of Passing</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>Class X</th>
+            <th id="i"></th>
+            <th id="i"></th>
+            <th id="i"></th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>Class XII</th>
+            <th id="i"></th>
+            <th id="i"></th>
+            <th id="i"></th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>Graduation</th>
+            <th id="i"></th>
+            <th id="i"></th>
+            <th id="i"></th>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>Masters</th>
+            <th id="i"></th>
+            <th id="i"></th>
+            <th id="i"></th>
+        </tr>
+        </table>
+        <label>COURSES</label>
+        <label>BCA</label><input type="radio">
+        <label>B.Com</label><input type="radio">
+        <label>B.Sc</label><input type="radio"><br><br>
+        <input id="btn" type="button" value="click">
+    </form>
+    </body>
+</html>
