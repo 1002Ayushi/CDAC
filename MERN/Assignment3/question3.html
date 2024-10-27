@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Remove Dropdown Contain</h3>
+        <label for="subject">Choose a subject</label>
+        <select name="subject" id="subject">
+            <option value="OS">Operating System</option>
+            <option value="OOPJ">Java</option>
+            <option value="ADS">Data Structure</option>
+            <option value="DBT">DataBase</option>
+        </select>
+        <button type="button" id="btn">Remove name</button>
+       
+        <script>
+            document.getElementById('btn').addEventListener('click',function(){
+                const dropdown =  document.getElementById('subject');
+                dropdown.selectedIndex = -1;
+            });
+        </script>
+</body>
+</html>

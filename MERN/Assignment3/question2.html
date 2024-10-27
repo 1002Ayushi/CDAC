@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="question2.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="infoForm">
+        <h2>Student Information</h2>
+        <div id="box">
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact No.</label>
+            <input type="text" id="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Id</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="btn">
+            <button type="button" id="submitButton">SUBMIT</button>
+        </div>
+    </div>
+    </form>
+    <div class="divide">
+        <hr class="line">
+    </div>
+    <div id="output" class="output"></div>
+    <script>
+        document.getElementById('submitButton').addEventListener('click',function(){
+    const name = document.getElementById('firstname').value;
+    const last = document.getElementById('lastname').value;
+    const number = document.getElementById('contact').value;
+    const mail = document.getElementById('email').value;
+
+   const output = document.getElementById('output');
+   output.innerHTML = `
+   <h3>Information : </h3>
+   <p><strong>First Name : </strong> ${name}</p>
+   <p><strong>Last Name : </strong> ${last}</p>
+   <p><strong>Contact No. : </strong> ${number}</p>
+   <p><strong>Email ID : </strong> ${mail}</p>
+   `;
+
+});
+    </script>
+</body>
+</html>
