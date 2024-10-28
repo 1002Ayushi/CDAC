@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: brown;
+        }
+        label{
+            font-size: 3vh;
+        }
+        select{
+            margin-left: 2vw;
+            padding: 1vw 1vh;
+        }
+        button{
+            padding: 1vh 2vw;
+            margin-left: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subjects </h1>
+        <label for="subject">Subject List :</label>
+        <select name="subject" id="subject">
+            <option value="OS">Operating System</option>
+            <option value="OOPJ">Java</option>
+            <option value="ADS">Data Structure</option>
+            <option value="DBT">DataBase</option>
+        </select>
+        <button type="button" id="btn">ClickOn</button>
+       
+        <script>
+            document.getElementById('btn').addEventListener('click',function(){
+                const dropdown =  document.getElementById('subject');
+                dropdown.selectedIndex = 0;
+            });
+        </script>
+</body>
+</html>
