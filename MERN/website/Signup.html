@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Roboto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background: linear-gradient(120deg, #007bff, #d0314c);
+            background:linear-gradient(#546E7A,#FFAB91);
+            height: 100vh;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 29vw;
+            background: rgba(22, 19, 19, 0.5); 
+            border-radius: 2vw;
+            box-shadow: 0.45vw 0.45vh rgb(195, 187, 187);
+            padding: 4vh 4vw; 
+        }
+        h1 {
+            text-align: center;
+            padding: 0 0 2vh 0;
+            border-bottom: 0.10vw solid silver;
+            color: white; 
+        }
+        .txt_field {
+            position: relative;
+            margin: 2vw 0;
+        }
+        .txt_field input {
+            width: 100%;
+            padding: 10px 5px; 
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: none;
+            color: white; 
+            outline: none;
+            border: 1px solid #adadad;
+        }
+        .txt_field label {
+            position: absolute;
+            top: 50%;
+            left: 10px; 
+            color: #adadad;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+        }
+        input[type="Submit"] {
+            width: 40%;
+            margin-bottom: 5px;
+            margin-left: 30%;
+            background: #adadad; 
+            height: 50px;
+            border: 1px solid;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        input[type="Submit"]:hover {
+            background: rgb(171, 148, 29);
+            transition: 0.3s;
+        }
+        .signup_link {
+            margin: 30px 0;
+            text-align: center;
+            font-size: 16px;
+            color: #131212;
+        }
+        .signup_link a {
+            color: #0c3753;
+            text-decoration: none;
+        }
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1><b>Sign Up</b></h1>
+            <div class="txt_field">
+                <input type="text" name="name" required>
+                <span></span>
+                <label>Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="cpassword" required>
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <input name="submit" type="Submit" value="Sign Up">
+            <div class="signup_link">
+                Have an Account? <a href="file:///F:/CDac/WPT/Assignment1 - 2/signin.html">Login Here</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
