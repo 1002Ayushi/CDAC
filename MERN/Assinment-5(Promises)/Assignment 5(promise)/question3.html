@@ -1,0 +1,51 @@
+<!-- 
+1. Print out "Program started" at the start of your code. 
+2. Create a Promise that resolves after 3 seconds. 
+3. Log out the promise while it's pending
+4. Print out "Program is progres..." as well.
+5. Print out "Step 1 complete" when the promise fulfills
+6. Have the first promise return another new Promise that will
+    fulfill after 3 seconds with the message "step 2 complete"
+7. Print out the message from the second promise after it
+   fufills("Step 2 Complete")     -->
+
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+    
+    <script>
+      console.log("Program Started") ;
+      
+      const first = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+           resolve();
+        },3000);
+      });
+
+      console.log(first);
+      console.log("Program in progress...");
+      
+      
+
+      first.then(()=>{
+        console.log("Step 1 complete");
+
+      return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+              resolve();
+            },3000);
+           });
+        }).then(()=>{
+            console.log("Step 2 Completed");
+            
+        })
+    </script>
+
+   </body>
+   </html>

@@ -1,0 +1,42 @@
+<!-- 
+1. Print out "Program started" at the start of your code. 
+2. Create a Promise that resolves after 3 second. 
+3. Log out the promise while it's pending
+4. Print out "Program is progres..." as well.
+5. Print out "Program complete" when the promise complete after 3 second. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log("Program started");
+        
+        const first = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve();
+            },3000);
+        });
+        
+        console.log(first);
+        console.log("Program in progress...");
+
+        first.then(() => {
+            console.log("Program complete");     
+        })
+        </script>
+        
+        <!-- output : 
+        
+        Program started
+        Promise {<pending>}
+        Program in progress... 
+        Program complete -->
+
+</body>
+</html>
