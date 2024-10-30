@@ -1,0 +1,42 @@
+<!-- Exercise 4:
+Modify fetchData from Exercise 3 to include error handling.
+Requirements:
+● Call the callback with an error message if an error occurs; otherwise, pass
+the “response.”
+● Handle the error gracefully by logging it if it occurs. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fetchData(url, callback) {
+            console.log("Fetching data from", url);
+            setTimeout(() => {
+                const hasError = Math.random() < 0.5;
+                if (hasError) {
+                    const errorMessage = `Error: Unable to fetch data from ${url}`;
+                    callback(errorMessage, null);
+                } else {
+                    const response = `Response from ${url}`;
+                    callback(null, response);
+                }
+            }, 2000);
+        }
+
+        function handleResponse(error, response) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log(response);
+            }
+        }
+
+        fetchData("https://www.google.com/data", handleResponse);
+    </script>
+</body>
+</html>
