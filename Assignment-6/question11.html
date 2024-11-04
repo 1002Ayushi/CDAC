@@ -1,0 +1,24 @@
+<!-- write a function that  accepts a callback and executes it after a delay. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script>
+       function executeAfterDelay(callback, delay) {
+            setTimeout(callback, delay);
+        }
+
+        function sayHello() {
+            console.log("Hello, world!");
+        }
+
+        executeAfterDelay(sayHello, 2000);
+    </script>
+</body>
+</html>
+

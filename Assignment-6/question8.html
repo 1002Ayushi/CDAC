@@ -1,0 +1,26 @@
+<!--  Question: Use the reduce method to find the total price of items in a shopping cart -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const cart = [
+            { name: "Apple", price: 0.99, quantity: 3 },
+            { name: "Banana", price: 0.59, quantity: 2 },
+            { name: "Orange", price: 0.79, quantity: 5 }
+        ];
+
+        const totalPrice = cart.reduce(function(total, item) {
+            return total + (item.price * item.quantity);
+        }, 0); 
+
+        console.log("Total Price ", totalPrice.toFixed(2));
+    </script>
+
+</body>
+</html>  

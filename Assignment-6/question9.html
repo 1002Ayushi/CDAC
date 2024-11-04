@@ -1,0 +1,36 @@
+<!-- Question: Create a function that takes any number of arguments and returns their sum
+using the rest operator. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Function</title>
+</head>
+<body>
+    <script>
+      
+        function sum(...args) {
+            return args.reduce((total, num) => total + num, 0);
+        }
+
+        console.log("Sum is", sum(1, 2, 3));
+        console.log("Sum is", sum(5, 10, 15, 20)); 
+        console.log("Sum is", sum(-1, 0, 1)); 
+    
+        // function sum(...args) {
+        //     let total = 0; 
+
+           
+        //     for (let i = 0; i < args.length; i++) {
+        //         total += args[i];
+        //     }
+
+        //     return total;
+        // }
+
+
+    </script>
+</body>
+</html>

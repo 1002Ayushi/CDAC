@@ -1,0 +1,134 @@
+<!-- Project Title: Personal Budget Tracker
+Duration: 30 Minutes
+Description:
+Create simple Personal Budget Tracker application that allows users to manage their expenses.
+The application should include functionalities to add, view, and calculate the total expenses. You
+will utilize various JavaScript concepts to implement this application.
+Requirements:
+1. Variables: Use let, const, and var to manage state variables like expense list and total
+expense.
+2. Functions and Arrow Functions: Create functions to add an expense, display all
+expenses, and calculate the total. Use an arrow function for at least one of these.
+3. JavaScript Objects: Represent each expense as an object with properties such as
+description, amount, and date.
+4. Destructuring: Use array and object destructuring when retrieving expense details for
+display.
+5. Array Methods (Map, Filter, Reduce):
+○ Use map to display a list of expense descriptions.
+○ Use filter to show only expenses above a certain amount (e.g., $20).
+○ Use reduce to calculate the total expenses.
+6. Rest and Spread Operator: Use the rest operator to allow adding multiple expenses at
+once. Use the spread operator to create a new expense list when adding new expenses.
+7. Callback Functions: Implement a function that takes a callback to display a success
+message after an expense is added.
+8. Promises: Create a promise that simulates fetching initial expenses from an API (you
+can just resolve with a hard-coded array).
+9. Closures: Use a closure to create a function that maintains the state of total expenses.
+10. Async/Await: Use async/await to fetch initial expenses and display them in the
+application when it loads. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        input { margin: 5px; }
+        button { margin: 5px; }
+        ul { list-style-type: none; }
+    </style>
+</head>
+<body>
+    <h1>Personal Budget Tracker</h1>
+    <input type="text" id="description" placeholder="Description" />
+    <input type="number" id="amount" placeholder="Amount" />
+    <input type="date" id="date" placeholder="Date" />
+    <button id="addExpense">Add Expense</button>
+    <button id="showAbove20">Show Expenses Above $20</button>
+    <h2>Total Expenses: <span id="total">0</span></h2>
+    <ul id="expenseList"></ul>
+
+    <script>
+        let expenses = [];
+        let totalExpense = 0;
+
+        const fetchInitialExpenses = () => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve([
+                        { description: "Groceries", amount: 30, date: "2024-11-01" },
+                        // { description: "Transportation", amount: 25, date: "2024-11-02" },
+                        // { description: "Internet", amount: 60, date: "2024-11-03" },
+                    ]);
+                }, 1000);
+            });
+        };
+
+        const createTotalExpenseTracker = () => {
+            return (amount) => {
+                totalExpense += amount;
+                document.getElementById("total").innerText = totalExpense;
+            };
+        };
+
+        const updateTotalExpense = createTotalExpenseTracker();
+
+        const addExpense = (description, amount, date) => {
+            const expense = { description, amount, date };
+            expenses = [...expenses, expense];
+            updateTotalExpense(amount);
+            displayExpenses();
+            showSuccessMessage(() => console.log("Expense added successfully!"));
+        };
+
+        const displayExpenses = () => {
+            const expenseList = document.getElementById("expenseList");
+            expenseList.innerHTML = "";
+            expenses.map(({ description }) => {
+                const li = document.createElement("li");
+                li.textContent = description;
+                expenseList.appendChild(li);
+            });
+        };
+
+        const showExpensesAbove = (amount) => {
+            const filteredExpenses = expenses.filter(expense => expense.amount > amount);
+            const expenseList = document.getElementById("expenseList");
+            expenseList.innerHTML = "";
+            filteredExpenses.map(({ description }) => {
+                const li = document.createElement("li");
+                li.textContent = description;
+                expenseList.appendChild(li);
+            });
+        };
+
+        const showSuccessMessage = (callback) => {
+            callback();
+        };
+
+        document.getElementById("addExpense").addEventListener("click", () => {
+            const description = document.getElementById("description").value;
+            const amount = parseFloat(document.getElementById("amount").value);
+            const date = document.getElementById("date").value;
+            if (description && !isNaN(amount) && date) {
+                addExpense(description, amount, date);
+            }
+        });
+
+        document.getElementById("showAbove20").addEventListener("click", () => {
+            showExpensesAbove(20);
+        });
+
+        const init = async () => {
+            expenses = await fetchInitialExpenses();
+            expenses.forEach(({ amount }) => updateTotalExpense(amount));
+            displayExpenses();
+        };
+
+        init();
+    </script>
+</body>
+</html>

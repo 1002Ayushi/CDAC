@@ -1,0 +1,66 @@
+<!-- Question: Create a simple shopping cart application using let, const, and var to manage
+ items. Use const for constant values (like tax rates) and let for variables that might
+change (like total price). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <script>
+
+const TAX_RATE = 0.08;
+
+let cart = {
+    items: [],
+    addItem: function(name, price, quantity) {
+        const item = {
+            name: name,
+            price: price,
+            quantity: quantity,
+            total: price * quantity
+        };
+        this.items.push(item);
+        console.log(`${quantity} x ${name} added to the cart.`);
+    },
+    calculateTotal: function() {
+        let subtotal = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            subtotal += this.items[i].total;
+        }
+        const tax = subtotal * TAX_RATE;
+        const total = subtotal + tax;
+        return {
+            subtotal: subtotal.toFixed(2),
+            tax: tax.toFixed(2),
+            total: total.toFixed(2)
+        };
+    },
+    displayCart: function() {
+        console.log("Items in your cart:");
+        this.items.forEach(item => {
+            console.log(`${item.quantity} x ${item.name} @ $${item.price.toFixed(2)} each = $${item.total.toFixed(2)}`);
+        });
+
+        const totals = this.calculateTotal();
+        console.log(`Subtotal: $${totals.subtotal}`);
+        console.log(`Tax: $${totals.tax}`);
+        console.log(`Total: $${totals.total}`);
+    }
+};
+
+cart.addItem("Laptop", 999.99, 1);
+cart.addItem("Headphones", 199.99, 2);
+cart.addItem("Mouse", 49.99, 1);
+
+
+cart.displayCart();
+
+
+    </script>
+</body>
+</html>

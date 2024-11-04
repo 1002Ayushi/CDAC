@@ -1,0 +1,23 @@
+<!-- Question: Use the map method to create a new array that contains the lengths of the
+names in the following array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = ["mhk","aaru","avi","amu","bhavik"];
+        const Lengths = names.map(function(name) {
+            return name.length;
+        });
+
+        // const Lengths = names.map(name => name.length);
+
+        console.log("Lengths of names:", Lengths);
+    </script>
+</body>
+</html>

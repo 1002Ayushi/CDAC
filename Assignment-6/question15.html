@@ -1,0 +1,30 @@
+<!-- 15. Question: Create a function that takes an array of numbers, applies a filter to keep only
+even numbers, then uses map to double those numbers, and finally returns the total
+using reduce. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Numbers Example</title>
+</head>
+<body>
+    <script>
+        function processNumbers(numbers) {
+           const evenNumbers = numbers.filter(num => num % 2 === 0);
+            
+           const doubledNumbers = evenNumbers.map(num => num * 2);
+            
+            const total = doubledNumbers.reduce((accumulator, current) => accumulator + current, 0);
+            
+            return total; 
+        }
+
+        const numbersArray = [32,65,76,2,6,3,10];
+
+        const result = processNumbers(numbersArray);
+        console.log("Total of doubled even numbers:", result); // Output the result
+    </script>
+</body>
+</html>

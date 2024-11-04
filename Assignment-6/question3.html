@@ -1,0 +1,32 @@
+<!-- Question: Create an object to represent a book with properties such as title, author, and
+year published. Add a method to display the book details.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+     class book{
+       constructor(title, author, year){
+        this.title = title;
+        this.author = author;
+        this.year = year;
+       }
+
+       details(){
+        console.log(this.title ," ",this.author," ",this.year);
+     }
+    }
+
+    const b = new book("The White Tiger","Aravind Adiga",1999);
+    
+    b.details();
+
+    </script>
+</body>
+</html>

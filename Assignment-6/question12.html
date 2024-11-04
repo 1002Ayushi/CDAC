@@ -1,0 +1,35 @@
+<!-- create a promise that resolves with a message after 3 seconds. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function waitAndResolve() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Promise resolved after 3 seconds!");
+                }, 3000);
+            });
+        }
+
+    //    waitAndResolve().then((message) => {
+    //         console.log(message); 
+    //     });
+
+    //     const myPromise = new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve("This message is resolved after 3 seconds!");
+    //         }, 3000); 
+    //      });
+
+    //         myPromise.then((message) => {
+    //         console.log(message);
+    //     });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Question: Given an object representing a car, use object destructuring to extract its
+properties -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+    const car = {
+        name : "Nano",
+        color : "black",
+        year: 2024,
+        drive(){
+            console.log("broom broom");
+        }
+    };
+
+    const{ name , color , year , drive} = car;
+
+    console.log("car name : ",name);
+    console.log("car color : ",color);
+    console.log("year : ",year);
+    
+    drive();
+
+    </script>
+</body>
+</html>
